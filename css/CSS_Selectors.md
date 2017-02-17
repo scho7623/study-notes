@@ -1,6 +1,7 @@
 #CSS Selectors
 ## `~` vs `+`
 * `a ~ b`: select all `b` elements present after `a` element
+* Example: [Codepen](http://codepen.io/anon/pen/wgbeqy)
 ```
 <style>
 p ~ ul {
@@ -19,6 +20,7 @@ p ~ ul {
 </div>
 ```
 * `a + b`: select `b` element which is present immediately after `a` element
+* Example: [Codepen](http://codepen.io/anon/pen/ZLNyXZ)
 ```
 <style>
 p + ul {
