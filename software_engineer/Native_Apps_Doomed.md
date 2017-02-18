@@ -13,3 +13,15 @@ Here are the links:
 ###Enable HTTPS
 ###The Manifest
 ###Service Worker
+
+##Cons of Native Apps
+* Write three different apps, one for Android, one for iOS, and one for the web
+* App install friction
+  * takes about 6 clicks to get the app installed
+  * 20% of the user drop out for each click before installing the app
+  
+##Why Native Apps are Gamble
+* 60% of Google Play app store have **never been downloaded**
+* Average mobile users download **less than three apps per month**
+* 94% of mobile revenue comes from **1% of publishers**
+* **80% of users** who downloaded an app fails to become active users
