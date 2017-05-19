@@ -1,4 +1,4 @@
-#CSS Selectors
+# CSS Selectors
 ## `~` vs `+`
 * `a ~ b`: select all `b` elements present after `a` element
 * Example: [Codepen](http://codepen.io/anon/pen/wgbeqy)
