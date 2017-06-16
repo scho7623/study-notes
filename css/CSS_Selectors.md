@@ -39,3 +39,8 @@ p + ul {
   </ul>
 </div>
 ```
+
+## attribute selectors
+* `[attrName*=<value>]`: `attrName` contains `<value>` somewhere
+* `[attrName~=<value>]`: `attrName` contains `<value>` as a space separated word
+* `[attrName|=<value>]`: `attrName` starts with `<value>` in dash separated string
