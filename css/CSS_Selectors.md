@@ -44,3 +44,4 @@ p + ul {
 * `[attrName*=<value>]`: `attrName` contains `<value>` somewhere
 * `[attrName~=<value>]`: `attrName` contains `<value>` as a space separated word
 * `[attrName|=<value>]`: `attrName` starts with `<value>` in dash separated string
+* Reference: https://css-tricks.com/attribute-selectors/
