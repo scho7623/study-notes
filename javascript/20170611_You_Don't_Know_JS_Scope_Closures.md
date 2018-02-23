@@ -17,7 +17,13 @@ You Don't Know JS Series ([here](https://github.com/getify/You-Dont-Know-JS))
 * Two models how scope works: _Lexical scope_ and _dynamic scope_
 * Lexing: Examining a string of **source code** characters and assign semantic meanings
 * Lexical scope: A scope that is defined in **lexing** time
-* Resolution of an identifier is independent from the environment of a _caller_
+* Resolution of an identifier is independent from the environment of a **caller**
+
+## Chaper 2.1: `with` and `eval`
+* JavaScript **does not** support dynamic scope
+* However, `with` and `eval` are "like" dynamic scope, just because it's _impossible_ to determine at lexing time
+* With `strict` mode, `with` and `eval` may not work as expected
+* General rule of thumb: **Don't use `with` or `eval`**
 
 ## Chapter 3: Function vs Block Scope
 * Function scope: Each function declared creates a new scope
