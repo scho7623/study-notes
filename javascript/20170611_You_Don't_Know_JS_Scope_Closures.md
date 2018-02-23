@@ -9,11 +9,15 @@ You Don't Know JS Series ([here](https://github.com/getify/You-Dont-Know-JS))
   * Code-generation: Take AST and generate executable code
 * Engine, Compiler, Scope play different roles
 * Variable look up is done from current scope to global scope
+* Function scope vs block scope
+  * `var` does not support block level scope
+  * Use `let` to create block scope variable
 
 ## Chaper 2: Lexical Scope
 * Two models how scope works: _Lexical scope_ and _dynamic scope_
 * Lexing: Examining a string of **source code** characters and assign semantic meanings
 * Lexical scope: A scope that is defined in **lexing** time
+* Resolution of an identifier is independent from the environment of a _caller_
 
 ## Chapter 3: Function vs Block Scope
 * Function scope: Each function declared creates a new scope
