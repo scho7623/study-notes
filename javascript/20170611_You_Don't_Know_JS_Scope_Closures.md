@@ -49,22 +49,22 @@ console.log(foo)  // ReferenceError error
       * _length_: number of really passed arguments
       * _properties-indexes (integer converted to string)_: values of arguments (left to right, starting from index 0)
         * Values of _properties-indexes_ and **really passed** formal parameters are shared
-```
-function foo(x, y, z) {
-  alert(foo.length) // defined function arguments: 3
-  alert(arguments.length) // really passed arguments: 2
+        ```
+        function foo(x, y, z) {
+          alert(foo.length) // defined function arguments: 3
+          alert(arguments.length) // really passed arguments: 2
 
-  // parameter sharing
-  alert(x === arguments[0]) // true
-  alert(x) // 10
-  arguments[0] = 20
-  alert(x) // 20
-  x = 30
-  alert(arguments[0]) // 30
-}
+          // parameter sharing
+          alert(x === arguments[0]) // true
+          alert(x) // 10
+          arguments[0] = 20
+          alert(x) // 20
+          x = 30
+          alert(arguments[0]) // 30
+        }
 
-foo(10, 20)
-```
+        foo(10, 20)
+        ```
   * Code execution
 
 ## Chaper 5: Scope closures
