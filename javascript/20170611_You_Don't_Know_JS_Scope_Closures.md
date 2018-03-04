@@ -42,6 +42,30 @@ console.log(foo)  // ReferenceError error
 * Only declaration is hoisted to the top of the scope
 * Variables (`var`) and function declarations are hoisted
 * Function expressions are **NOT** hoisted
+* _[Sungho]_: In my opinion, `hoisting` is a little deceptive, as JavaScript engine is actually **NOT** reorganizing the code to declare variables and functions to the top of the scope. Instead, it's a two step process:
+  * Execution context build
+    * In function context: Activation Object (AO) is created on entering the function context with `arguments` property initialized with following:
+      * _callee_: reference to the current function
+      * _length_: number of really passed arguments
+      * _properties-indexes (integer converted to string)_: values of arguments (left to right, starting from index 0)
+        * Values of _properties-indexes_ and **really passed** formal parameters are shared
+        ```
+        function foo(x, y, z) {
+          alert(foo.length) // defined function arguments: 3
+          alert(arguments.length) // really passed arguments: 2
+          
+          // parameter sharing
+          alert(x === arguments[0]) // true
+          alert(x) // 10
+          arguments[0] = 20
+          alert(x) // 20
+          x = 30
+          alert(arguments[0]) // 30
+        }
+        
+        foo(10, 20)
+        ```
+  * Code execution
 
 ## Chaper 5: Scope closures
 * _Closure is when a fucntion is able to remember and access its lexical scope even when that function is executing outside its lexical scope_
