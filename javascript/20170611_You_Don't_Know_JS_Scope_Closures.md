@@ -44,27 +44,37 @@ console.log(foo)  // ReferenceError error
 * Function expressions are **NOT** hoisted
 * _[Sungho]_: In my opinion, `hoisting` is a little deceptive, as JavaScript engine is actually **NOT** reorganizing the code to declare variables and functions to the top of the scope. Instead, it's a two step process:
   * Execution context build
-    * In function context: Activation Object (AO) is created on entering the function context with `arguments` property initialized with following:
-      * _callee_: reference to the current function
-      * _length_: number of really passed arguments
-      * _properties-indexes (integer converted to string)_: values of arguments (left to right, starting from index 0)
-        * Values of _properties-indexes_ and **really passed** formal parameters are shared
-        ```
-        function foo(x, y, z) {
-          alert(foo.length) // defined function arguments: 3
-          alert(arguments.length) // really passed arguments: 2
+    * In function context: 
+      * `arguments` property initialized with following:
+        * _callee_: reference to the current function
+        * _length_: number of really passed arguments
+        * _properties-indexes (integer converted to string)_: values of arguments (left to right, starting from index 0)
+          * Values of _properties-indexes_ and **really passed** formal parameters are shared
+          ```
+          function foo(x, y, z) {
+            alert(foo.length) // defined function arguments: 3
+            alert(arguments.length) // really passed arguments: 2
 
-          // parameter sharing
-          alert(x === arguments[0]) // true
-          alert(x) // 10
-          arguments[0] = 20
-          alert(x) // 20
-          x = 30
-          alert(arguments[0]) // 30
-        }
+            // parameter sharing
+            alert(x === arguments[0]) // true
+            alert(x) // 10
+            arguments[0] = 20
+            alert(x) // 20
+            x = 30
+            alert(arguments[0]) // 30
+          }
 
-        foo(10, 20)
-        ```
+          foo(10, 20)
+          ```
+      * For each defined parameter of a function
+        * Property with a name and value of defined parameter is created
+        * For not passed parameter, property with a name and value of `undefined` is created
+      * For each function declaration
+        * Property with a name and value of function object is created
+        * If there is already a property with same name, **replace** its value and attributes
+      * For each variable declaration
+        * Property with a variable name and value of `undefined` is created
+        * If there is already a property with same name, **does nothing** (no change in existing property)
   * Code execution
 
 ## Chaper 5: Scope closures
