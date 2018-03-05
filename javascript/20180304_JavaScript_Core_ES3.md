@@ -247,6 +247,7 @@ console.log(
 ```
 
 Above code is represented in a diagram:
+
 ![image of shared parent scope](http://dmitrysoshnikov.com/wp-content/uploads/shared-scope.png)
 
 ## _this_ value
