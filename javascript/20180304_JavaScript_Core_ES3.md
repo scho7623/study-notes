@@ -251,3 +251,8 @@ Above code is represented in a diagram:
 ![image of shared parent scope](http://dmitrysoshnikov.com/wp-content/uploads/shared-scope.png)
 
 ## _this_ value
+A _this_ value is a special object related with the execution context. It is a property of the execution context, not a property of the variable object. Also, it never participates in any identifier resolution process. When _this_ is referred in a code, its value is taken directly from the execution context, without any scope chain lookup. 
+
+For a global context, the value of _this_ is global object.
+For a function context, the value may be different depending on how the function is activated.
+More details in another chapter...
